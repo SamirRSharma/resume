@@ -1,0 +1,161 @@
+%-------------------------
+% Resume in Latex
+% Author : Samir Sharma
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+% Adjust margins
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small#4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small#2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=3pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Samir Sharma} \\ \vspace{1pt}
+    \small 587-832-6680 $|$ \href{mailto:samirraisharma@gmail.com}{samirraisharma@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/samir-rsharma/}{linkedin.com/in/samir-rsharma} $|$
+    \href{https://github.com/SamirRSharma}{github.com/SamirRSharma}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Waterloo, ON, Canada}
+      {Honours CO-OP Faculty of Mathematics}{Sep. 2024 -- May 2029}
+    \resumeSubheading
+      {John G. Diefenbaker High School}{Calgary, AB, Canada}
+      {STUCO President}{Sep. 2021 -- June 2024}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineering Intern}{June 2024 -- Sep. 2024}
+      {Quickly}{Calgary, AB, Canada}
+      \resumeItemListStart
+        \resumeItem{Engineered and optimized cutting-edge features for the Quickly platform, enhancing user experience and backend performance.}
+        \resumeItem{Collaborated with a cross-functional team to resolve critical bugs swiftly.}
+        \resumeItem{Conducted code reviews and developed innovative internal tools and documentation.}
+        \resumeItem{Authored API documentation and developed validation systems using Yup.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Minecraft Server Programmer}{Sep. 2021 -- June 2023}
+      {Online Server}{}
+      \resumeItemListStart
+        \resumeItem{Architected and developed a high-performance Minecraft server with 5,000 concurrent players and 30,000+ unique players.}
+        \resumeItem{Created and maintained custom plugins, ensuring seamless gameplay and robust server management.}
+        \resumeItem{Integrated external APIs to automate reward systems, boosting player engagement and satisfaction.}
+        \resumeItem{Raised \$6,000 for Ukrainian aid by developing and managing a donation website and store.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Peer Programming Tutor/Developer}{Sep. 2023 -- June 2024}
+      {John G. Diefenbaker High School}{Calgary, AB, Canada}
+      \resumeItemListStart
+        \resumeItem{Designed and implemented the school's leadership website with a user-friendly interface.}
+        \resumeItem{Mentored students in HTML, CSS, and React, fostering a collaborative learning environment.}
+        \resumeItem{Presented to the Calgary Board of Education on integrating programming into the curriculum.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+     \resumeProjectHeading
+        {\textbf{ML Tennis Analysis System} $|$ \emph{Python, YOLO, PyTorch, OpenCV}}{June 2023 -- Nov. 2023}
+        \resumeItemListStart
+          \resumeItem{Developed a system to detect and track players and tennis balls in video footage using YOLO.}
+          \resumeItem{Implemented a model to detect key points of the tennis court for player position and ball in/out calls.}
+          \resumeItem{Trained CNNs to enhance detection accuracy and performance for fast-moving tennis balls.}
+          \resumeItem{Used PyTorch for model training and OpenCV for video processing and visualization.}
+        \resumeItemListEnd
+     \resumeProjectHeading
+        {\textbf{JS Full Stack AI app} $|$ \emph{Huggingface, Docker, AWS, Next.js}}{Feb. 2024 -- May 2024}
+        \resumeItemListStart
+          \resumeItem{Developed a web application enabling users to perform object detection on uploaded images using ONNX models on Hugging Face.}
+          \resumeItem{Packaged the application in a Docker image and deployed it on AWS ECS and ECR.}
+          \resumeItem{Implemented image upload functionality and integrated it with a custom API for object detection.}
+          \resumeItem{Utilized Next.js for front-end development, enhancing user experience.}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{
+     \item \textbf{Languages:} HTML/CSS, Python, C++, JavaScript, TypeScript, SQL, Java, LaTeX
+     \item \textbf{Frameworks/Libraries:} React, Node.js, Flask, PyTorch, OpenCV, YOLO, Docker
+     \item \textbf{Databases/Tools:} MongoDB, MySQL, SQLite, Docker, Git, Bash
+    }
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
