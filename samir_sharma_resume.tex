@@ -1,161 +1,161 @@
 %-------------------------
-% Resume in Latex
+% Customized Resume in LaTeX
 % Author : Samir Sharma
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
+%-------------------------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
-\usepackage[empty]{fullpage}
+% Removed the conflicting fullpage package
+%\usepackage[empty]{fullpage}
+% Added T1 font encoding before loading fonts
+\usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{amsfonts}
 \usepackage{tabularx}
-\usepackage{hyperref}
 
-% Adjust margins
-\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage[top=0.6in, bottom=0.6in, left=0.7in, right=0.7in]{geometry}
 
 \urlstyle{same}
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
 
-% Sections formatting
+\definecolor{headings}{RGB}{41, 128, 185}
+\definecolor{accent}{RGB}{44, 62, 80}
+\definecolor{bullet}{RGB}{41, 128, 185}
+
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
+
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \color{headings}\scshape\Large\bfseries
+}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{1ex plus .2ex}
 
-% Ensure that generated pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-% Custom commands
-\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small#4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small#2} \\
-    \end{tabular*}\vspace{-7pt}
+    {\textbf{#1} \hfill #2}\\
+    {\textit{#3} \hfill \textit{#4}}\vspace{-8pt}
 }
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    {\textbf{#1} \hfill #2}\vspace{-7pt}
 }
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemi{\faCircle}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=3pt]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Samir Sharma} \\ \vspace{1pt}
-    \small 587-832-6680 $|$ \href{mailto:samirraisharma@gmail.com}{samirraisharma@gmail.com} $|$ 
-    \href{https://www.linkedin.com/in/samir-rsharma/}{linkedin.com/in/samir-rsharma} $|$
-    \href{https://github.com/SamirRSharma}{github.com/SamirRSharma}
+    {\Huge \scshape Samir Sharma} \\ \vspace{1pt}
+    \footnotesize
+    \makebox[\textwidth][c]{%
+    \href{mailto:resume@samirsharma.ca}{\color{accent}\faEnvelope\ \ resume@samirsharma.ca} \ $|$ \
+    \href{https://www.linkedin.com/in/samir-rsharma/}{\color{accent}\faLinkedin\ \ linkedin.com/in/samir-rsharma} \ $|$ \
+    \href{https://github.com/SamirRSharma}{\color{accent}\faGithub\ \ github.com/SamirRSharma} \ $|$ \
+    \href{https://www.samirsharma.ca}{\color{accent}\faGlobe\ \ www.samirsharma.ca}%
+    }
 \end{center}
 
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {University of Waterloo}{Waterloo, ON, Canada}
-      {Honours CO-OP Faculty of Mathematics}{Sep. 2024 -- May 2029}
-    \resumeSubheading
-      {John G. Diefenbaker High School}{Calgary, AB, Canada}
-      {STUCO President}{Sep. 2021 -- June 2024}
-  \resumeSubHeadingListEnd
+%-----------TECHNICAL SKILLS-----------
+\section*{\color{headings}Technical Skills}
+ \resumeSubHeadingListStart
+    \small{
+      \item{
+        \textbf{Languages}{: HTML/CSS, Python, C++, JavaScript, TypeScript, SQL, Java, \LaTeX} \\
+        \textbf{Frameworks/Libraries}{: React, Node.js, Flask, PyTorch, OpenCV, YOLO, Docker} \\
+        \textbf{Databases/Tools}{: MongoDB, MySQL, SQLite, Docker, Git, Bash}
+        }
+    }
+ \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
-\section{Experience}
+\section*{\color{headings}Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
       {Software Engineering Intern}{June 2024 -- Sep. 2024}
       {Quickly}{Calgary, AB, Canada}
       \resumeItemListStart
-        \resumeItem{Engineered and optimized cutting-edge features for the Quickly platform, enhancing user experience and backend performance.}
-        \resumeItem{Collaborated with a cross-functional team to resolve critical bugs swiftly.}
-        \resumeItem{Conducted code reviews and developed innovative internal tools and documentation.}
-        \resumeItem{Authored API documentation and developed validation systems using Yup.}
+        \resumeItem{Optimized platform features by \textbf{refactoring backend code} in \textbf{Node.js}, reducing average loading times by \textbf{23\%} and enhancing user experience.}
+        \resumeItem{Resolved \textbf{15 critical bugs} over 4 weeks by collaborating with a team of 4 software engineers, significantly improving system stability.}
+        \resumeItem{Developed validation systems using \textbf{Yup} and \textbf{TypeScript}, cutting database errors by \textbf{30\%}, and authored API documentation, decreasing customer inquiries by \textbf{70\%}.}
+        \resumeItem{Conducted code reviews to ensure code quality and adherence to best practices in \textbf{Git} workflows.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Minecraft Server Programmer}{Sep. 2021 -- June 2023}
-      {Online Server}{}
+      {Independent Project}{Calgary, AB, Canada}
       \resumeItemListStart
-        \resumeItem{Architected and developed a high-performance Minecraft server with 5,000 concurrent players and 30,000+ unique players.}
-        \resumeItem{Created and maintained custom plugins, ensuring seamless gameplay and robust server management.}
-        \resumeItem{Integrated external APIs to automate reward systems, boosting player engagement and satisfaction.}
-        \resumeItem{Raised \$6,000 for Ukrainian aid by developing and managing a donation website and store.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Peer Programming Tutor/Developer}{Sep. 2023 -- June 2024}
-      {John G. Diefenbaker High School}{Calgary, AB, Canada}
-      \resumeItemListStart
-        \resumeItem{Designed and implemented the school's leadership website with a user-friendly interface.}
-        \resumeItem{Mentored students in HTML, CSS, and React, fostering a collaborative learning environment.}
-        \resumeItem{Presented to the Calgary Board of Education on integrating programming into the curriculum.}
+        \resumeItem{Built a high-performance \textbf{Minecraft server} using \textbf{Java} and \textbf{Spigot API}, supporting \textbf{5,000 concurrent users} and over \textbf{30,000 unique players}.}
+        \resumeItem{Created custom \textbf{gameplay plugins in Java} to enhance gameplay and ensure robust server management.}
+        \resumeItem{Boosted player engagement by integrating external \textbf{APIs} to automate reward systems.}
+        \resumeItem{Raised \textbf{\$6,000} for Ukrainian aid by developing and managing a \textbf{donation platform} and in-game store.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
-\section{Projects}
+\section*{\color{headings}Projects}
   \resumeSubHeadingListStart
-     \resumeProjectHeading
-        {\textbf{ML Tennis Analysis System} $|$ \emph{Python, YOLO, PyTorch, OpenCV}}{June 2023 -- Nov. 2023}
-        \resumeItemListStart
-          \resumeItem{Developed a system to detect and track players and tennis balls in video footage using YOLO.}
-          \resumeItem{Implemented a model to detect key points of the tennis court for player position and ball in/out calls.}
-          \resumeItem{Trained CNNs to enhance detection accuracy and performance for fast-moving tennis balls.}
-          \resumeItem{Used PyTorch for model training and OpenCV for video processing and visualization.}
-        \resumeItemListEnd
-     \resumeProjectHeading
-        {\textbf{JS Full Stack AI app} $|$ \emph{Huggingface, Docker, AWS, Next.js}}{Feb. 2024 -- May 2024}
-        \resumeItemListStart
-          \resumeItem{Developed a web application enabling users to perform object detection on uploaded images using ONNX models on Hugging Face.}
-          \resumeItem{Packaged the application in a Docker image and deployed it on AWS ECS and ECR.}
-          \resumeItem{Implemented image upload functionality and integrated it with a custom API for object detection.}
-          \resumeItem{Utilized Next.js for front-end development, enhancing user experience.}
-        \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Fullstack Bionic Hand} $|$ \emph{JavaScript, Tailwind, MongoDB, Node.js, AWS EC2, API}}{Hack the North 2024}
+      \resumeItemListStart
+        \resumeItem{Tied for \textbf{finalist}, top 12 out of 239 teams at Hack the North 2024, Canada's largest hackathon.}
+        \resumeItem{Developed a \textbf{bionic hand} controlled by \textbf{EMG and ECG signals}, utilizing a \textbf{language model} for signal interpretation.}
+        \resumeItem{Linked the device to a \textbf{full-stack application} via \textbf{WebSockets} to display live stats and enable key binding functionality.}
+        \resumeItem{Secured over \textbf{\$9,000} in prizes.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{ML Tennis Analysis System} $|$ \emph{Python, YOLO, PyTorch, OpenCV}}{June 2023 -- Nov. 2023}
+      \resumeItemListStart
+        \resumeItem{Developed an \textbf{object detection system} using \textbf{YOLO} to detect and track players and tennis balls in video footage.}
+        \resumeItem{Implemented a model to identify court key points, enabling accurate \textbf{player positioning} and automated \textbf{in/out calls}.}
+        \resumeItem{Enhanced detection accuracy for fast-moving tennis balls by training custom \textbf{CNNs}.}
+        \resumeItem{Utilized \textbf{PyTorch} for model training and \textbf{OpenCV} for video processing and visualization.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Full Stack AI Object Detection App} $|$ \emph{Hugging Face, Docker, AWS, Next.js}}{Feb. 2024 -- May 2024}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{web app} allowing users to perform \textbf{object detection} on images using \textbf{Hugging Face} models.}
+        \resumeItem{Containerized the application with \textbf{Docker} and deployed it on \textbf{AWS EC2} for scalable cloud hosting.}
+        \resumeItem{Implemented image upload functionality on a \textbf{full-stack} application.}
+        \resumeItem{Enhanced user experience by utilizing \textbf{Next.js} for front-end development.}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{
-     \item \textbf{Languages:} HTML/CSS, Python, C++, JavaScript, TypeScript, SQL, Java, LaTeX
-     \item \textbf{Frameworks/Libraries:} React, Node.js, Flask, PyTorch, OpenCV, YOLO, Docker
-     \item \textbf{Databases/Tools:} MongoDB, MySQL, SQLite, Docker, Git, Bash
-    }
- \end{itemize}
+%-----------EDUCATION-----------
+\section*{\color{headings}Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Waterloo}{Sep. 2024}
+      {Bachelor of Mathematics, Honours Co-op Program}{Waterloo, ON, Canada}
+      \resumeItemListStart
+        \resumeItem{\textbf{Activities}: Math Society Speaker, Residence Council South President, Data Science Club, Computer Science Club}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}
